@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="zj-main" id="app">
+        <div class="zj-title">
+            <h1>风控部B1数据</h1>
+        </div>
+        <div class="zj-body">
+            <section>
+                <div>
+                    <span>占比/%</span>
+                    <span>期数/期</span>
+                    <div id="main"></div>
+                </div>
+                <div>
+                    <div class="method-4">
+                        <table>
+                            <colgroup></colgroup>
+                            <colgroup class="highlight"></colgroup>
+                            <colgroup></colgroup>
+                            <thead>
+                                <tr>
+                                    <th>期数(期)</th>
+                                    <th>规模(笔)</th>
+                                    <th>占比(%)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>弹性</td>
+                                    <td>弹性扩展，灵活配置</td>
+                                    <td>运维困难</td>
+                                </tr>
+                                <tr>
+                                    <td>可靠</td>
+                                    <td>稳定可靠，数据放心</td>
+                                    <td>系统脆弱，数据丢失</td>
+                                </tr>
+                                <tr>
+                                    <td>易用</td>
+                                    <td>即买即用，快速部署</td>
+                                    <td>费心麻烦</td>
+                                </tr>
+                                <tr>
+                                    <td>安全</td>
+                                    <td>立体防护，专业支持</td>
+                                    <td>黑客入侵</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div>
+                    <div class="zj-bottom">
+                        <div>逾期数据及占比</div>
+                        <div>
+                            <div id="main1"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 2 -->
+            <section>
+                <div>
+                    <section>资产规模(200)</section>
+                    <section>车辆规模(1500)</section>
+                </div>
+                <div class="zj-map" id="map-wrap">
+
+                </div>
+                <div class="zj-other">
+                    <div class="zj-others">
+                        <section>&#x3000;当月已完成债权
+                            <span>480笔&#x3000;</span>
+                        </section>
+                        <div>
+                            <section>
+                                <div>
+                                    <p>清收总金额</p>
+                                    <p>¥ 1, 200, 000</p>
+                                </div>
+
+                            </section>
+                            <section>
+                                <div id="main4"></div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 3 -->
+            <section>
+                <div>
+                    <span>占比/%</span>
+                    <span>次数/次</span>
+                    <div id="main2"></div>
+                </div>
+                <div class="zj-true">
+                    <div>
+                        <section>
+                            违章是否处理
+                        </section>
+                        <div id="main3">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="zj-true">
+                    <div>
+                        <section>
+                            GPS异常
+                        </section>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+<!-- <script src="../echarts.min.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="./echarts.js"></script>
+<script src="./china.js"></script>
+<script src="./example1.js"></script>
+<!-- <script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+
+        },
+        mounted() {
+            // 1
+            var myChart = echarts.init(document.getElementById('main'));
+            var option = {
+                color: ['#1c70ff'],
+                title: {
+                    text: '待收资产规模及占比',
+                    left: 'center',
+                    textStyle: {
+                        color: "#fff"
+                    }
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                        type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: [{
+                    type: 'category',
+                    data: ['1-12期', '12-24期', '24-36期'],
+                    axisTick: {
+                        alignWithLabel: true
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#fff'
+                        }
+                    }
+                }],
+                yAxis: [{
+                    type: 'value',
+                    axisLine: {
+                        lineStyle: {
+                            color: '#fff'
+                        }
+                    }
+                }],
+                series: [{
+                    name: '占比',
+                    type: 'bar',
+                    barWidth: '30',
+                    data: [10, 52, 200]
+                }]
+            };
+            myChart.setOption(option);
+            // 2
+            var myChart1 = echarts.init(document.getElementById('main1'));
+            var option1 = {
+                color: ['#31b1e5', '#064eb6', '#e5e5e5'],
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    orient: 'vertical',
+                    left: 'right',
+                    top: 'bottom',
+                    data: ['直接访问', '邮件营销', '联盟广告'],
+                    textStyle: {
+                        color: '#fff'
+                    }
+                },
+                series: [{
+                    name: '访问来源',
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '60%'],
+                    data: [{
+                            value: 335,
+                            name: '直接访问'
+                        },
+                        {
+                            value: 310,
+                            name: '邮件营销'
+                        },
+                        {
+                            value: 234,
+                            name: '联盟广告'
+                        }
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }]
+            };
+            myChart1.setOption(option1);
+            // 3
+            var myChart2 = echarts.init(document.getElementById('main2'));
+            var option2 = {
+                color: ['#1c70ff'],
+                title: {
+                    text: '待收资产规模及占比',
+                    left: 'center',
+                    textStyle: {
+                        color: "#fff"
+                    }
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                        type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: [{
+                    type: 'category',
+                    data: ['1-12期', '12-24期', '24-36期'],
+                    axisTick: {
+                        alignWithLabel: true
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#fff'
+                        }
+                    }
+                }],
+                yAxis: [{
+                    type: 'value',
+                    axisLine: {
+                        lineStyle: {
+                            color: '#fff'
+                        }
+                    }
+                }],
+                series: [{
+                    name: '占比',
+                    type: 'bar',
+                    barWidth: '30',
+                    data: [10, 52, 200]
+                }]
+            };
+            myChart2.setOption(option2);
+            //4
+            var myChart3 = echarts.init(document.getElementById('main3'));
+            var option3 = {
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b}: {c} ({d}%)"
+                },
+                color: ['#b7b7b7', '#1d71ff'],
+                legend: {
+                    orient: 'vertical',
+                    x: 'left',
+                    data: ['未处理', '已处理'],
+                    textStyle: {
+                        color: '#fff'
+                    },
+                    left: 'right',
+                    top: 'bottom'
+                },
+                series: [{
+                    name: '违章是否处理',
+                    type: 'pie',
+                    radius: ['50%', '70%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                        normal: {
+                            show: false,
+                            position: 'center'
+                        },
+                        emphasis: {
+                            show: true,
+                            textStyle: {
+                                fontSize: '30',
+                                fontWeight: 'bold'
+                            }
+                        }
+                    },
+                    labelLine: {
+                        normal: {
+                            show: false
+                        }
+                    },
+                    data: [{
+                            value: 335,
+                            name: '未处理'
+                        },
+                        {
+                            value: 310,
+                            name: '已处理'
+                        }
+                    ]
+                }]
+            };
+            myChart3.setOption(option3);
+            // 5
+            var myChart4 = echarts.init(document.getElementById('main4'));
+            var option4 = {
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b}: {c} ({d}%)"
+                },
+                color: ['#b7b7b7', '#1d71ff'],
+                legend: {
+                    orient: 'vertical',
+                    x: 'left',
+                    data: ['未处理', '已处理'],
+                    textStyle: {
+                        color: '#fff'
+                    },
+                    left: 'right',
+                    top: 'bottom'
+                },
+                series: [{
+                    name: '当月债权',
+                    type: 'pie',
+                    radius: ['50%', '70%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                        normal: {
+                            show: false,
+                            position: 'center'
+                        },
+                        emphasis: {
+                            show: true,
+                            textStyle: {
+                                fontSize: '30',
+                                fontWeight: 'bold'
+                            }
+                        }
+                    },
+                    labelLine: {
+                        normal: {
+                            show: false
+                        }
+                    },
+                    data: [{
+                            value: 335,
+                            name: '未处理'
+                        },
+                        {
+                            value: 310,
+                            name: '已处理'
+                        }
+                    ]
+                }]
+            };
+            myChart4.setOption(option4);
+            //map
+            
+        },
+        methods: {
+
+        }
+    })
+</script> -->
+<script>
+     // 1
+     var myChart = echarts.init(document.getElementById('main'));
+            var option = {
+                color: ['#1c70ff'],
+                title: {
+                    text: '待收资产规模及占比',
+                    left: 'center',
+                    textStyle: {
+                        color: "#fff"
+                    }
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                        type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: [{
+                    type: 'category',
+                    data: ['1-12期', '12-24期', '24-36期'],
+                    axisTick: {
+                        alignWithLabel: true
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#fff'
+                        }
+                    }
+                }],
+                yAxis: [{
+                    type: 'value',
+                    axisLine: {
+                        lineStyle: {
+                            color: '#fff'
+                        }
+                    }
+                }],
+                series: [{
+                    name: '占比',
+                    type: 'bar',
+                    barWidth: '30',
+                    data: [10, 52, 200]
+                }]
+            };
+            myChart.setOption(option);
+            // 2
+            var myChart1 = echarts.init(document.getElementById('main1'));
+            var option1 = {
+                color: ['#31b1e5', '#064eb6', '#e5e5e5'],
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b} : {c} ({d}%)"
+                },
+                legend: {
+                    orient: 'vertical',
+                    left: 'right',
+                    top: 'bottom',
+                    data: ['直接访问', '邮件营销', '联盟广告'],
+                    textStyle: {
+                        color: '#fff'
+                    }
+                },
+                series: [{
+                    name: '访问来源',
+                    type: 'pie',
+                    radius: '55%',
+                    center: ['50%', '60%'],
+                    data: [{
+                            value: 335,
+                            name: '直接访问'
+                        },
+                        {
+                            value: 310,
+                            name: '邮件营销'
+                        },
+                        {
+                            value: 234,
+                            name: '联盟广告'
+                        }
+                    ],
+                    itemStyle: {
+                        emphasis: {
+                            shadowBlur: 10,
+                            shadowOffsetX: 0,
+                            shadowColor: 'rgba(0, 0, 0, 0.5)'
+                        }
+                    }
+                }]
+            };
+            myChart1.setOption(option1);
+            // 3
+            var myChart2 = echarts.init(document.getElementById('main2'));
+            var option2 = {
+                color: ['#1c70ff'],
+                title: {
+                    text: '待收资产规模及占比',
+                    left: 'center',
+                    textStyle: {
+                        color: "#fff"
+                    }
+                },
+                tooltip: {
+                    trigger: 'axis',
+                    axisPointer: { // 坐标轴指示器，坐标轴触发有效
+                        type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+                    }
+                },
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    containLabel: true
+                },
+                xAxis: [{
+                    type: 'category',
+                    data: ['1-12期', '12-24期', '24-36期'],
+                    axisTick: {
+                        alignWithLabel: true
+                    },
+                    axisLine: {
+                        lineStyle: {
+                            color: '#fff'
+                        }
+                    }
+                }],
+                yAxis: [{
+                    type: 'value',
+                    axisLine: {
+                        lineStyle: {
+                            color: '#fff'
+                        }
+                    }
+                }],
+                series: [{
+                    name: '占比',
+                    type: 'bar',
+                    barWidth: '30',
+                    data: [10, 52, 200]
+                }]
+            };
+            myChart2.setOption(option2);
+            //4
+            var myChart3 = echarts.init(document.getElementById('main3'));
+            var option3 = {
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b}: {c} ({d}%)"
+                },
+                color: ['#b7b7b7', '#1d71ff'],
+                legend: {
+                    orient: 'vertical',
+                    x: 'left',
+                    data: ['未处理', '已处理'],
+                    textStyle: {
+                        color: '#fff'
+                    },
+                    left: 'right',
+                    top: 'bottom'
+                },
+                series: [{
+                    name: '违章是否处理',
+                    type: 'pie',
+                    radius: ['50%', '70%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                        normal: {
+                            show: false,
+                            position: 'center'
+                        },
+                        emphasis: {
+                            show: true,
+                            textStyle: {
+                                fontSize: '30',
+                                fontWeight: 'bold'
+                            }
+                        }
+                    },
+                    labelLine: {
+                        normal: {
+                            show: false
+                        }
+                    },
+                    data: [{
+                            value: 335,
+                            name: '未处理'
+                        },
+                        {
+                            value: 310,
+                            name: '已处理'
+                        }
+                    ]
+                }]
+            };
+            myChart3.setOption(option3);
+            // 5
+            var myChart4 = echarts.init(document.getElementById('main4'));
+            var option4 = {
+                tooltip: {
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b}: {c} ({d}%)"
+                },
+                color: ['#b7b7b7', '#1d71ff'],
+                legend: {
+                    orient: 'vertical',
+                    x: 'left',
+                    data: ['未处理', '已处理'],
+                    textStyle: {
+                        color: '#fff'
+                    },
+                    left: 'right',
+                    top: 'bottom'
+                },
+                series: [{
+                    name: '当月债权',
+                    type: 'pie',
+                    radius: ['50%', '70%'],
+                    avoidLabelOverlap: false,
+                    label: {
+                        normal: {
+                            show: false,
+                            position: 'center'
+                        },
+                        emphasis: {
+                            show: true,
+                            textStyle: {
+                                fontSize: '30',
+                                fontWeight: 'bold'
+                            }
+                        }
+                    },
+                    labelLine: {
+                        normal: {
+                            show: false
+                        }
+                    },
+                    data: [{
+                            value: 335,
+                            name: '未处理'
+                        },
+                        {
+                            value: 310,
+                            name: '已处理'
+                        }
+                    ]
+                }]
+            };
+            myChart4.setOption(option4);
+</script>
+
+</html>
