@@ -1,287 +1,205 @@
-* {
+*{
     margin: 0;
 }
-
-.zj-main {
+.zj-main{
     width: 100vw;
     height: 100vh;
+    background-color: #ddd;
     background-color: #333;
-    /* background-color: #888; */
-    overflow: hidden;
 }
-
-.zj-title {
-    text-align: center;
-    color: #fff;
-    height: 6vh;
-    line-height: 6vh;
-}
-
-.zj-body {
-    display: flex;
-}
-
-.zj-body>section {
-    width: 33.33%;
-    margin-top: 50px;
+.zj-title{
+    height: 4vh;
     /* outline: 1px solid red; */
-}
-
-/* 1-1 */
-
-.zj-body>section>div:nth-child(1) {
     width: 100%;
-    height: 30vh;
+    text-align: center;
+    line-height: 4vh;
+    color: #3087e5;
+    font-size: 24px;
+}
+.zj-body{
+    height: 96vh;
     /* outline: 1px solid orange; */
-    position: relative;
-}
-
-.zj-body>section>div:nth-child(1)>span:nth-of-type(1) {
-    position: absolute;
-    color: #fff;
-    top: 20px;
-    left: 11%;
-}
-
-.zj-body>section>div:nth-child(1)>span:nth-of-type(2) {
-    position: absolute;
-    color: #fff;
-    bottom: 10px;
-    right: 6%;
-}
-
-#main ,
-#main2{
-    width: 80%;
-    height: 100%;
-    margin: 0 auto;
-}
-
-/* 1-2 */
-
-.zj-body>section:nth-child(1)>div:nth-child(2) {
     width: 100%;
-    height: 30vh;
-    /* outline: 1px solid green; */
-    position: relative;
+    display: flex;
 }
-
-table {
-    border-collapse: collapse;
-    position: absolute;
-    top: 50px;
-    left: 15%;
-    font-size: 14px;
-    width: 72%;
-    height: 190px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-table tr td:first-child {
-    font-weight: bold;
-}
-
-th {
-    background-color: rgba(3, 27, 68, 0.54);
-    color: #fff;
-}
-
-/*公共 end*/
-
-.method-4 th,
-.method-4 td {
-    padding: 20px;
-    text-align: center;
-    color: #fff;
-}
-
-.method-4 tr {
-    border-top: 1px solid #042256;
-    border-bottom: 1px solid #042256;
-}
-
-.method-4 thead tr {
-    border-top-width: 0;
-}
-
-.method-4 tr:last-child {
-    border-bottom-width: 0;
-}
-
-.method-4 colgroup {
-    border-bottom: 1px solid #042256;
-}
-
-.method-4 tr td:nth-child(3),
-.method-4 tr th:nth-child(3),
-.method-4 colgroup:nth-child(3) {
-    border-right: 1px solid #042256;
-}
-
-.method-4 tr td:nth-child(1),
-.method-4 tr th:nth-child(1) {
-    border-left: 1px solid #042256;
-}
-
-.method-4 colgroup:nth-child(1) {
-    /* border: 1px solid #042256; */
-}
-
-/* 1-3 */
-
-.zj-body>section>div:nth-child(3) {
-    width: 100%;
-    height: 30vh;
-    /* outline: 1px solid yellow; */
-    position: relative;
-}
-
-.zj-bottom {
-    width: 72%;
-    /* outline: 1px solid red; */
-    color: #fff;
-    height: 350px;
-    position: absolute;
-    top: 20px;
-    left: 15%;
-    border: 1px solid #042256;
-}
-
-.zj-bottom>div:nth-child(1) {
-    height: 40px;
-    background-color: rgba(3, 27, 68, 0.54);
-    border-radius: 6px;
-    text-align: center;
-    line-height: 40px;
-    font-size: 18px;
-}
-
-.zj-bottom>div:nth-child(2) {
-    width: 100%;
-    height: 90%;
+.zj-one{
+    width: 30%;
+    height: 96vh;
     /* outline: 1px solid red; */
 }
-
-#main1 {
-    width: 100%;
-    height: 100%;
+/* 地图部分 */
+.zj-two{
+    width: 40%;
 }
-
-/* 2-1 */
-.zj-body>section:nth-child(2){
-    /* outline: 1px solid red; */
-}
-.zj-body>section:nth-child(2)>div:nth-child(1) {
+.zj-map-title{
     width: 385px;
+    height: 4vh;
+    border: solid 1px #042256;
+    background-color: #02122f;
+    border-radius: 5px;
     margin: 0 auto;
-    line-height: 51px;
-    font-size: 18px;
     display: flex;
     color: #fff;
-    height: 51px;
-    background-color: #02122f;
-    border-radius: 6px;
+    line-height: 4vh;
 }
-
-.zj-body>section:nth-child(2)>div:nth-child(1)>section {
+.zj-map-title>section{
     width: 50%;
-    border: solid 1px #042256;
+    font-size: 18px;
     text-align: center;
 }
-
-.zj-body>section:nth-child(2)>div:nth-child(1)>section:nth-child(1) {
-    border-bottom-left-radius: 6px;
-    border-top-left-radius: 6px;
-}
-
-.zj-body>section:nth-child(2)>div:nth-child(1)>section:nth-child(2) {
-    border-bottom-right-radius: 6px;
-    border-top-right-radius: 6px;
+.zj-map-title>section:nth-child(2){
+    border-left: 1px solid #042256;
 }
 .zj-map{
     width: 100%;
     height: 60vh;
-    /* outline: 1px solid orange; */
+    /*outline: 1px solid yellow;*/
 }
-.zj-other{
-    display: flex;
-    height: 90%;
-    /* justify-content: center;
-    align-items: center; */
-}
-.zj-others{
-    margin: 30px auto;
-    width: 475px;
-    border: 1px solid #042256;  
-    height:  302px; 
-    color: #fff;
-    font-size: 18px;
-}
-.zj-others>section{
+#map-wrap{
     width: 100%;
-    height: 40px;
-    line-height: 40px;
-    background-color: rgba(3, 27, 68, 0.54);
-}
-.zj-others>section>span{
-    float: right;
-}
-.zj-others>div{
-    width: 100%;
-    height: 250px;
-    display: flex;
-}
-.zj-others>div>section{
-    width: 50%;
-    /* height: 100%; */
+     height: 100%;
     /* outline: 1px solid red; */
 }
-.zj-others>div>section:nth-child(1){
+.zj-one>div{
+    width: 100%;
+    height: 32vh;
+    /* outline: 1px solid red; */
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
-#main4{
+.zj-two>div:nth-child(1){
     width: 100%;
-    height: 100%;
-    /* outline: 1px solid red; */
+    height: 64vh;
+    /* outline: 1px solid yellow; */
+}
+.zj-two>div:nth-child(2){
+    width: 100%;
+    height: 32vh;
+    /* outline: 1px solid green; */
+}
+#main,#main2{
+    width: 95%;
+    height:100%;
 }
 
-
-
-
-
-/* 3-1 */
-
-.zj-body>section:nth-child(3){
-}
-.zj-true{
-    width: 100%!important;
-    height: 30vh;
-    margin: 0 auto;
-    /* outline: 1px solid red; */
+.zj-one>div:nth-child(1){
     position: relative;
 }
-.zj-true>div{
+.zj-one>div:nth-child(1)>span:nth-child(1){
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
     position: absolute;
-    left: 130px;
-    top: 50px;
-    width: 70%;
-    height: 300px;
+    top: 2vh;
+    left: .5vw;
+}
+.zj-one>div:nth-child(1)>span:nth-child(2){
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    bottom: .6vh;
+    right: .1vw;
+}
+.zj-section,
+.zj-other{
+    width: 90%;
+    height: 28vh;
     border: 1px solid #042256;
+    border-radius: 5px;
+    /* outline: 1px solid orange; */
 }
-.zj-true>div>section{
+.zj-section>div:nth-child(1){
     width: 100%;
-    height: 40px;
-    background-color: rgba(3, 27, 68, 0.54);
-    color: #fff;
-    line-height: 40px;
+    height: 5vh;
     text-align: center;
+    color: #fff;
+    line-height: 5vh;
+    font-size: 18px;
+    background-color: rgba(3, 27, 68, 0.54);
 }
-#main3{
+#main1,#main3,#main4{
     width: 100%;
-    height: 80%;
+    height: 23vh;
+    /* outline: 1px solid red; */
 }
+/* 地图下面的那块 */
+.zj-two>div:nth-child(2){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.zj-other>div:nth-child(1){
+    width: 100%;
+    height: 5vh;
+    color: #fff;
+    line-height: 5vh;
+    font-size: 18px;
+    box-sizing: border-box;
+    padding: 0 15px;
+    background-color: rgba(3, 27, 68, 0.54);
+}
+.zj-other>div:nth-child(1)>span:nth-child(2){
+    float: right;
+}
+.zj-other>div:nth-child(2){
+    width: 100%;
+    height: 23vh;
+    display: flex;
+}
+.zj-other>div:nth-child(2)>section:nth-child(1){
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+}
+.zj-other>div:nth-child(2)>section:nth-child(2){
+    width: 50%;
+    height: 100%;
+}
+/* 表格 */
+.zj-table>div:nth-child(1){
+    display: flex;
+}
+.zj-table>div:nth-child(1)>section{
+    width: 33.33%
+}
+.zj-block>div{
+    width: 100%;
+    height: 7.7vh;
+    /* outline: 1px solid red; */
+    display: flex;
+    border-bottom: 1px solid #042256;
+}
+.zj-block>div>section{
+    width: 33.33%;
+    height: 100%;
+    line-height: 7.7vh;
+    text-align: center;
+    color: #fff;
+}
+.zj-block>div:last-child{
+    border-bottom: none;
+}
+/* 左下角饼图重定义 */
+.zj-customize{
+    position: relative;
+}
+.zj-child{
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    right: 0;
+    font-size: 14px;
+}
+.zj-child>p>span{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+/* color: ['#31b1e5', '#064eb6', '#e5e5e5'], */
 
